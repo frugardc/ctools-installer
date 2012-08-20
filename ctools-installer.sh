@@ -202,10 +202,9 @@ downloadCDF (){
 
 
 downloadCDA (){
-	# CDA
-	URL='http://ci.analytical-labs.com/job/Webdetails-CDA/lastSuccessfulBuild/artifact/dist/*zip*/dist.zip'	
+	# CDA	
 	echo -n "Downloading CDA... "
-	wget --no-check-certificate 'http://ci.analytical-labs.com/job/Webdetails-CDA'$URL1'/lastSuccessfulBuild/artifact/dist/*zip*/dist.zip'	 -P .tmp/cda -o /dev/null
+	wget --no-check-certificate 'http://ci.analytical-labs.com/job/Webdetails-CDA/lastSuccessfulBuild/artifact/dist/*zip*/dist.zip'	 -P .tmp/cda -o /dev/null
 	rm -f .tmp/dist/marketplace.xml	
 	unzip .tmp/cda/dist.zip  -d .tmp > /dev/null
 	echo "Done"
@@ -353,7 +352,7 @@ installCDA (){
 		
 	
 	
-	unzip  .tmp/dist/cda$FILESUFIX*zip -d $SOLUTION_DIR/system/ > /dev/null
+	unzip  .tmp/dist/cda-TRUNK-SNAPSHOT*zip -d $SOLUTION_DIR/system/ > /dev/null
 	setupSamples	
 	unzip  .tmp/dist/cda-samples-*zip -d $SOLUTION_DIR/plugin-samples > /dev/null
 }
