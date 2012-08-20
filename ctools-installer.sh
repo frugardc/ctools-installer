@@ -205,7 +205,7 @@ downloadCDA (){
 	# CDA
 	URL='http://ci.analytical-labs.com/job/Webdetails-CDA/lastSuccessfulBuild/artifact/dist/*zip*/dist.zip'	
 	echo -n "Downloading CDA... "
-	wget --no-check-certificate $URL -P .tmp/cda -o /dev/null
+	wget --no-check-certificate 'http://ci.analytical-labs.com/job/Webdetails-CDA'$URL1'/lastSuccessfulBuild/artifact/dist/*zip*/dist.zip'	 -P .tmp/cda -o /dev/null
 	rm -f .tmp/dist/marketplace.xml	
 	unzip .tmp/cda/dist.zip  -d .tmp > /dev/null
 	echo "Done"
